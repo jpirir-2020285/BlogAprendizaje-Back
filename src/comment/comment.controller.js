@@ -124,3 +124,18 @@ export const eliminate = async (req, res) => {
         })
     }
 }
+
+export const getCommentsByPost = async (req, res) => {
+    try {
+        const { postId } = req.params;
+
+        const postExists = await Post.findById(postId);
+        if (!postExists) return res.status(404).send({ message: 'Post not found' });
+
+        const comments = await Comment.find({ post: postId }).sort({ createdAt: -1 });
+        res.status(200).send({ success: true, message: 'Comments retrieved successfully', comments });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send({ success: false, message: 'Error retrieving comments', error });
+    }
+}
