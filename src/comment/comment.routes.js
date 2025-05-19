@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { save, getAll, getById, update, eliminate } from './comment.controller.js'
+import { save, getAll, getById, update, eliminate, getCommentsByPost } from './comment.controller.js'
 import { addCommentary, updateCommentary } from '../../helpers/validators.js'
 
 const router = Router()
@@ -29,6 +29,11 @@ router.put(
 router.delete(
     '/:id',
     eliminate
+)
+
+router.get(
+    '/comments/:postId', 
+    getCommentsByPost
 )
 
 export default router
