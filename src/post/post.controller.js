@@ -134,13 +134,31 @@ export const getPostsByCourse = async (req, res) => {
 
 export const getPostsByYear = async (req, res) => {
   try {
-    const { year } = req.params 
-    const posts = await Post.find({ year }).sort({ year: -1 }) 
-    if (posts.length === 0) {
-      return res.status(404).send({ message: `No posts found for year: ${year}` }) 
+    const { year } = req.params
+    const numericYear = Number(year)
+    if (isNaN(numericYear)) {
+      return res.status(400).send({
+        success: false,
+        message: `'${year}' no es un año válido`
+      })
     }
-    res.status(200).send(posts) 
+
+    // rango desde el 1ro de enero hasta el 1ro de enero del año siguiente
+    const start = new Date(`${numericYear}-01-01T00:00:00Z`)
+    const end   = new Date(`${numericYear + 1}-01-01T00:00:00Z`)
+
+    const posts = await Post.find({
+      dateCreated: { $gte: start, $lt: end }
+    }).sort({ dateCreated: -1 })
+
+    // siempre devolvemos 200 con el array (aunque sea vacío)
+    return res.status(200).send(posts)
   } catch (error) {
-    res.status(500).send({ message: 'Error fetching filtered posts', error }) 
+    console.error(error)
+    return res.status(500).send({
+      success: false,
+      message: 'Error al filtrar publicaciones por año',
+      error: error.message
+    })
   }
-} 
+}
