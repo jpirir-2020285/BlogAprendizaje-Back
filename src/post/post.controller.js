@@ -118,3 +118,29 @@ export const eliminate = async (req, res) => {
         })
     }
 }
+
+export const getPostsByCourse = async (req, res) => {
+  try {
+    const { course } = req.params 
+    const posts = await Post.find({ course }).sort({ createdAt: -1 }) 
+    if (posts.length === 0) {
+      return res.status(404).send({ message: `No posts found for course: ${course}` }) 
+    }
+    res.status(200).send(posts) 
+  } catch (error) {
+    res.status(500).send({ message: 'Error fetching filtered posts', error }) 
+  }
+}
+
+export const getPostsByYear = async (req, res) => {
+  try {
+    const { year } = req.params 
+    const posts = await Post.find({ year }).sort({ year: -1 }) 
+    if (posts.length === 0) {
+      return res.status(404).send({ message: `No posts found for year: ${year}` }) 
+    }
+    res.status(200).send(posts) 
+  } catch (error) {
+    res.status(500).send({ message: 'Error fetching filtered posts', error }) 
+  }
+} 
