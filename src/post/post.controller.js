@@ -143,7 +143,6 @@ export const getPostsByYear = async (req, res) => {
       })
     }
 
-    // rango desde el 1ro de enero hasta el 1ro de enero del año siguiente
     const start = new Date(`${numericYear}-01-01T00:00:00Z`)
     const end   = new Date(`${numericYear + 1}-01-01T00:00:00Z`)
 
@@ -151,7 +150,6 @@ export const getPostsByYear = async (req, res) => {
       dateCreated: { $gte: start, $lt: end }
     }).sort({ dateCreated: -1 })
 
-    // siempre devolvemos 200 con el array (aunque sea vacío)
     return res.status(200).send(posts)
   } catch (error) {
     console.error(error)
