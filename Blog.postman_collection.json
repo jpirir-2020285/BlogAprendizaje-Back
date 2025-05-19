@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "27740f03-e4ad-479e-9786-0418cf18d5a3",
+		"name": "Blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37952140"
+	},
+	"item": [
+		{
+			"name": "post",
+			"item": [
+				{
+					"name": "Tecnologia",
+					"item": [
+						{
+							"name": "Investigacion-Java",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "Investigacion de java",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Investigue informacion sobre java, como los tipos de datos etc.\nhttps://github.com/jpirir-2020285/Proyectos-Cuarto.git",
+											"type": "text"
+										},
+										{
+											"key": "course",
+											"value": "TECNOLOGIA",
+											"type": "text"
+										},
+										{
+											"key": "dateCreated",
+											"value": "10-1-2023",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:1310/v1/post/",
+									"host": [
+										"localhost"
+									],
+									"port": "1310",
+									"path": [
+										"v1",
+										"post",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Taller",
+					"item": [
+						{
+							"name": "Kinal-Market",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "Kinal-Marke",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Proyecto sobre un supermercado\nhttps://github.com/jpirir-2020285/Proyectos-Quinto.git",
+											"type": "text"
+										},
+										{
+											"key": "course",
+											"value": "TALLER",
+											"type": "text"
+										},
+										{
+											"key": "dateCreated",
+											"value": "4-4-2024",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:1310/v1/post/",
+									"host": [
+										"localhost"
+									],
+									"port": "1310",
+									"path": [
+										"v1",
+										"post",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Practica",
+					"item": [
+						{
+							"name": "Kinal-Market Copy",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "Agenda",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Agenda de contactos\nhttps://github.com/jpirir-2020285/Proyectos-Sextos.git",
+											"type": "text"
+										},
+										{
+											"key": "course",
+											"value": "Practica",
+											"type": "text"
+										},
+										{
+											"key": "dateCreated",
+											"value": "2-15-2025",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:1310/v1/post/",
+									"host": [
+										"localhost"
+									],
+									"port": "1310",
+									"path": [
+										"v1",
+										"post",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Hola 2",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Esta es descripcion",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "TALLER",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:1310/v1/post/",
+							"host": [
+								"localhost"
+							],
+							"port": "1310",
+							"path": [
+								"v1",
+								"post",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
